@@ -1,0 +1,62 @@
+/* 
+    Sass X CSS
+    -> No CSS, tem muitas limitações. Não há como usar funções, criar variáveis (só com gambiarras);
+    -> No Sass, você pode programar e te dá uma margem de possibilidadesd
+*/
+
+@import "./variavel"; /* posso usar em todo e qualquer scss que eu quiser em todo meu site! */
+
+*{
+    margin:0;
+    padding:0;
+}
+
+
+h1, p{
+    color: $cor-fonte-principal;
+    font-family: $font-principal;
+}
+
+
+.container{
+    max-width: 950px;
+    padding:20px;
+    background-image: $cor-fundo;
+
+    .estrutura{
+        /* No sass, você pode criar filhos sem precisar criar um novo, colocando dentro*/
+        
+
+        .box{ /* eu só mexo com o box DENTRO de estrutura */
+            max-width: 400px;
+            margin: 25px;
+
+            .imagem{
+                display: flex;
+            }
+
+            h1{
+                padding:10px;
+                font-size: 30px;
+            }
+
+            img{
+                width: 100%;
+            }
+
+            p{
+                text-align: justify;
+                padding-bottom:10px;
+            }
+
+            a{
+                text-decoration: none;
+                color: white;
+                &:hover{ /* Posso fazer isso no sass */
+                    color: $cor-hover;
+                }
+            }
+        }
+
+    }
+}
