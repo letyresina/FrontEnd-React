@@ -81,7 +81,7 @@ h1, p{
 
             a{
                 text-decoration: none;
-                color: white;
+                color: $cor-fonte-principal;
                 &:hover{ /* Posso fazer isso no sass */
                     color: $cor-hover;
                 }
