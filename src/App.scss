@@ -20,6 +20,14 @@
     overflow: hidden;
 }
 
+.text-shadow{
+    text-shadow: 2px 2px 2px black;
+}
+
+.box-shadow{
+    box-shadow: 2px 3px 9px 1px rgb(109, 7, 24);
+}
+
 *{
     margin:0;
     padding:0;
@@ -80,6 +88,8 @@ h1, p{
         h1{
             padding:15px;
             @include tituloPadrao();
+
+            @extend .text-shadow
         }
 
         div{
@@ -97,6 +107,8 @@ h1, p{
                 justify-content: center;
                 margin-right: 10px;
                 margin-bottom: 10px;
+
+                @extend .box-shadow;
             }
         }
     }
