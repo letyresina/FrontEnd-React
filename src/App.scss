@@ -28,6 +28,10 @@
     box-shadow: 2px 3px 9px 1px rgb(109, 7, 24);
 }
 
+@function cor-fundo(){
+    @return $cor-hover
+}
+
 *{
     margin:0;
     padding:0;
@@ -47,11 +51,13 @@ h1, p{
 
     .estrutura{
         /* No sass, você pode criar filhos sem precisar criar um novo, colocando dentro*/
-        
+
         @media(max-width:560px){
             flex-wrap: wrap;
             text-align: justify;
         }
+
+        display: inline-flex;
 
         .box{ /* eu só mexo com o box DENTRO de estrutura */
             max-width: 400px;
@@ -89,7 +95,11 @@ h1, p{
             padding:15px;
             @include tituloPadrao();
 
-            @extend .text-shadow
+            @extend .text-shadow;
+
+            &:hover{
+                color: cor-fundo();
+            }
         }
 
         div{
