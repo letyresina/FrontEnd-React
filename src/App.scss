@@ -6,6 +6,20 @@
 
 @import "./variavel"; /* posso usar em todo e qualquer scss que eu quiser em todo meu site! */
 
+@mixin tituloPadrao{
+    font-family: $font-principal;
+    color: rgb(255, 65, 97);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+@mixin circulo($tamanho){
+    width: $tamanho;
+    height: $tamanho;
+    border-radius: $tamanho / 2;
+    overflow: hidden;
+}
+
 *{
     margin:0;
     padding:0;
@@ -26,10 +40,16 @@ h1, p{
     .estrutura{
         /* No sass, você pode criar filhos sem precisar criar um novo, colocando dentro*/
         
+        @media(max-width:560px){
+            flex-wrap: wrap;
+            text-align: justify;
+        }
 
         .box{ /* eu só mexo com o box DENTRO de estrutura */
             max-width: 400px;
             margin: 25px;
+            
+
 
             h1{
                 padding:10px;
@@ -54,5 +74,30 @@ h1, p{
             }
         }
 
+    }
+
+    .estrutura-card{
+        h1{
+            padding:15px;
+            @include tituloPadrao();
+        }
+
+        div{
+            display: inline-flex;
+
+            @media(max-width:560px){
+                flex-wrap: wrap;
+            }
+            article{
+                background-color:black;
+                
+                @include circulo(150px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        }
     }
 }
